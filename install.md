@@ -38,11 +38,11 @@ sudo apt install -y git
 
 # 3. BitNet CPP 소스 코드 다운로드
 ```bash
-git clone https://github.com/microsoft/BitNet.git
+git clone https://github.com/Eddie-Wang1120/llama.cpp.git
 ```
 다운로드가 완료되면 BitNet 디렉토리로 이동합니다.
 ```bash
-cd BitNet
+cd llama.cpp
 ```
 
 # 4. 의존성 설치
