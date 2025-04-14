@@ -1,12 +1,12 @@
 # 1. 시스템 요구 사항 확인
 ## 요구 사항
 
-- 64비트 CPU: AMD 또는 인텔 CPU를 사용한 64비트 환경이어야 합니다. 실험 결과에 따르면, AMD 라이젠 7 8코어, 64GB RAM을 탑재한 시스템에서 7억 개 모델까지는 무리 없이 추론이 가능하며, 최대 300억 개 모델까지도 효율적으로 운용할 수 있는 것으로 나타났습니다. CPU만으로도 초당 300단어 이상을 처리할 수 있는 수준의 추론 속도를 보여주며, 매우 빠른 처리 능력을 자랑합니다. 이 외에도 인텔 i7-13700H와의 비교 테스트 결과도 제공되었는데, AMD 라이젠 CPU가 멀티코어 성능에서 우수함을 확인할 수 있었습니다. 특히, 1비트 양자화를 활용하여 700억 개 이상의 파라미터를 가진 모델도 충분히 CPU에서 구동할 수 있다는 점이 흥미롭습니다.
-- 운영체제: Ubuntu, CentOS와 같은 리눅스 기반 운영체제 또는 macOS 환경에서 실행할 수 있습니다. Windows의 경우 **Windows Subsystem for Linux (WSL)**을 사용해 Ubuntu를 설치할 수 있습니다.
-- CMake 3.22 이상: CMake는 빌드 시스템을 설정하는 도구입니다.
-- Clang 18 또는 GCC: C++ 컴파일러로 Clang이나 GCC가 필요합니다.
-- Python 3.9 이상: BitNet CPP는 Python 인터페이스를 지원하므로 Python이 필요합니다.
-- Git: 소스 코드를 다운로드하기 위해 필요합니다.
+- 64비트 CPU: AMD 또는 인텔 CPU를 사용한 64비트 환경
+- 운영체제: Ubuntu, CentOS와 같은 리눅스 기반 운영체제 또는 macOS 환경
+- CMake 3.22 이상: CMake는 빌드 시스템을 설정하는 도구
+- Clang 18 또는 GCC: C++ 컴파일러로 Clang이나 GCC가 필요
+- Python 3.9 이상: BitNet CPP는 Python 인터페이스를 지원
+- Git: 소스 코드를 다운로드하기 위해 필요
 
 # 2. 필수 소프트웨어 설치
 ## 2.1 CMake 설치
@@ -15,26 +15,25 @@ sudo apt update
 sudo apt install -y cmake
 ```
 
-2.2 Clang 설치
+## 2.2 Clang 설치
 Clang을 설치하기 위해 다음 명령어를 입력합니다.
-
-bash
-코드 복사
+```bash
 sudo apt install -y clang
-2.3 Python 설치
+```
+
+## 2.3 Python 설치
 Python 3.9 이상 버전이 필요합니다. 만약 Python이 설치되어 있지 않다면, 다음과 같이 설치합니다.
-
-bash
-코드 복사
+```bash
 sudo apt install -y python3 python3-pip
+```
+
 설치된 Python 버전을 확인하려면 다음 명령어를 입력하세요.
-
-bash
-코드 복사
+```bash
 python3 --version
-2.4 Git 설치
-BitNet CPP의 소스 코드를 클론하기 위해 Git을 설치합니다.
+```
 
-bash
-코드 복사
+## 2.4 Git 설치
+BitNet CPP의 소스 코드를 클론하기 위해 Git을 설치합니다.
+```bash
 sudo apt install -y git
+```
