@@ -52,9 +52,26 @@ cd BitNet
 ```bash
 conda create -n bitnet-cpp python=3.9
 conda activate bitnet-cpp
-[y]
 pip install -r requirements.txt
 ```
+
+# 5. Build the project
+```bash
+# Download the model from Hugging Face, convert it to quantized gguf format, and build the project
+python setup_env.py --hf-repo tiiuae/Falcon3-7B-Instruct-1.58bit -q i2_s
+
+# Or you can manually download the model and run with local path
+huggingface-cli download tiiuae/Falcon3-7B-Instruct-1.58bit --local-dir models/Falcon3-7B-Instruct-1.58bit
+python setup_env.py -md models/Falcon3-7B-Instruct-1.58bit -q i2_s
+```
+
+# 6. Usage
+```bash
+# Run inference with the quantized model
+python run_inference.py -m models/Falcon3-7B-Instruct-1.58bit/ggml-model-i2_s.gguf -p "You are a helpful assistant" -cnv
+```
+
+
 
 
 
