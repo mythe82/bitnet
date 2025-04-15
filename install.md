@@ -52,6 +52,33 @@ pip3 install -r requirements.txt
 ```
 Python 패키지 설치가 완료되면, CMake를 사용해 프로젝트를 설정할 준비가 완료됩니다.
 
+# 5. CMake를 사용해 빌드 환경 설정
+BitNet CPP는 CMake를 사용하여 빌드됩니다. 먼저 build 디렉토리를 생성한 후 CMake 명령을 실행하여 빌드 환경을 설정합니다.
+```bash
+mkdir build
+cd build
+cmake ..
+```
+위 명령은 CMakeLists.txt 파일에 정의된 설정을 기반으로 컴파일 환경을 구성합니다.
+
+# 6. BitNet CPP 컴파일
+CMake 설정이 완료되면, make 명령어를 사용하여 BitNet CPP를 컴파일합니다.
+```bash
+make -j$(nproc)
+```
+위 명령어에서 -j$(nproc)는 컴파일을 병렬로 수행하는 명령으로, 컴퓨터의 CPU 코어 수만큼 병렬 컴파일을 수행합니다. 이 명령어는 컴파일 속도를 크게 향상시킵니다.
+
+# 7. BitNet CPP 실행
+컴파일이 완료되면 BitNet CPP를 사용할 준비가 완료되었습니다. 이제 BitNet CPP의 Python 인터페이스를 사용할 수 있습니다. Python 스크립트나 Jupyter Notebook에서 사용할 수 있으며, BitNet을 불러오고 AI 모델을 추론하는 코드로 작성할 수 있습니다.
+예를 들어, Python에서 다음과 같은 코드를 작성하여 BitNet CPP 모델을 로드하고 추론을 수행할 수 있습니다.
+```python
+import bitnet
+# 모델 로드
+model = bitnet.load_model(‘path_to_model’)
+# 추론 수행
+output = model.infer(“This is a test sentence.”)
+print(output)
+```
 
 
 
